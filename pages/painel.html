@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psi Rosângela - Painel</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h1>Olá, <span id="painel-nome">Paciente</span>!</h1>
+                <button onclick="logout()" class="btn btn-outline">Sair</button>
+            </div>
+
+            <div class="grid-3">
+                <div style="grid-column: span 2;">
+                    <div class="card">
+                        <h3>📅 Minhas Consultas</h3>
+                        <div id="lista-consultas">
+                            </div>
+                        <div style="margin-top: 20px;">
+                            <a href="agendamento.html" class="btn btn-primary">Novo Agendamento</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card" style="background-color: var(--color-secondary);">
+                        <h3>💡 Dica do Dia</h3>
+                        <p>Respire fundo. O autocuidado não é egoísmo, é necessidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>

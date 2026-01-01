@@ -1,0 +1,119 @@
+/* --- Variáveis e Reset --- */
+:root {
+    --color-primary: #6A4C93; /* Roxo Profundo - Sabedoria/Confiança */
+    --color-secondary: #FFCFD9; /* Rosa Suave Solicitado - Acolhimento */
+    --color-accent: #9A7AA0;
+    --color-text: #333333;
+    --color-bg: #FAFAFA;
+    --color-white: #FFFFFF;
+    --color-error: #D32F2F;
+    --color-success: #388E3C;
+    
+    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(106, 76, 147, 0.2);
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- Tipografia & Utilitários --- */
+h1, h2, h3 { color: var(--color-primary); line-height: 1.2; margin-bottom: 1rem; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: var(--transition);
+    text-align: center;
+}
+.btn-primary { background-color: var(--color-primary); color: var(--color-white); }
+.btn-primary:hover { background-color: #533a75; transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.btn-outline { border: 2px solid var(--color-primary); color: var(--color-primary); background: transparent; }
+.btn-outline:hover { background-color: var(--color-primary); color: var(--color-white); }
+.hidden { display: none !important; }
+.fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+
+/* --- Header & Nav --- */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+}
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--color-primary); display: flex; align-items: center; gap: 8px; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-weight: 500; color: #555; position: relative; }
+.nav-links a::after {
+    content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0;
+    background-color: var(--color-secondary); transition: var(--transition);
+}
+.nav-links a:hover::after { width: 100%; }
+.mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+/* --- Forms --- */
+.form-group { margin-bottom: 1.5rem; }
+label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+input, select, textarea {
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--radius);
+    font-family: inherit; transition: var(--transition);
+}
+input:focus, textarea:focus {
+    outline: none; border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(106, 76, 147, 0.1);
+}
+.error-msg { color: var(--color-error); font-size: 0.85rem; margin-top: 5px; display: none; }
+
+/* --- Cards & Sections --- */
+section { padding: 4rem 0; }
+.hero {
+    background: linear-gradient(135deg, #FFF0F3 0%, #FFFFFF 100%);
+    padding: 6rem 0;
+    text-align: center;
+}
+.card {
+    background: var(--color-white); padding: 2rem; border-radius: var(--radius);
+    box-shadow: var(--shadow-card); transition: var(--transition); border: 1px solid #f0f0f0;
+}
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--color-secondary); }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+/* --- Disclaimer Bar --- */
+.dev-banner {
+    background: #333; color: #fff; text-align: center; padding: 5px; font-size: 0.8rem;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed; top: 70px; right: -100%; width: 100%; height: calc(100vh - 70px);
+        background: white; flex-direction: column; align-items: center; justify-content: center;
+        transition: 0.4s; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+    .nav-links.active { right: 0; }
+    .mobile-toggle { display: block; }
+}
+
+/* --- Keyframes --- */
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }

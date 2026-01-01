@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psi Rosângela - Login</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="container" style="max-width: 500px;">
+            <div class="card">
+                <h2 style="text-align: center;">Acesso do Paciente</h2>
+                <form id="form-login">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" required>
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" required>
+                        <div class="error-msg"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Entrar</button>
+                </form>
+                <p style="text-align: center; margin-top: 15px;">
+                    Não tem conta? <a href="cadastro.html" style="color: var(--color-primary); font-weight: bold;">Cadastre-se</a>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>

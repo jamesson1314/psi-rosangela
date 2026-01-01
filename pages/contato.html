@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psi Rosângela - Contato</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="container">
+            <h1>Fale Conosco</h1>
+            <div class="grid-3">
+                <div class="card" style="grid-column: span 2;">
+                    <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! (Simulação)'); this.reset();">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensagem</label>
+                            <textarea rows="5" required style="width:100%; padding:10px; border-radius:12px; border:1px solid #ddd;"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>📍 Endereço</h3>
+                    <p>Av. Paulista, 0000 (Fictício)<br>São Paulo - SP</p>
+                    <br>
+                    <h3>📞 Telefone</h3>
+                    <p>(11) 99999-9999</p>
+                    <br>
+                    <h3>📧 E-mail</h3>
+                    <p>contato@psirosangela.fake</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>
